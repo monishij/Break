@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "600377251318",
+    "firebase_url": "https://break-2f099.firebaseio.com",
+    "project_id": "break-2f099",
+    "storage_bucket": "break-2f099.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:600377251318:android:bb2eb644e06583c0fc63d7",
+        "android_client_info": {
+          "package_name": "com.example.break_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "600377251318-stmgsceealj8upd55ketjlfp35p41krh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIMg0xBxhWf_oY0G_ecTszMh4rLHNMUy0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "600377251318-stmgsceealj8upd55ketjlfp35p41krh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
