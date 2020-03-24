@@ -25,11 +25,16 @@ class _RegisterState extends State<Register> {
 
   @override
   Widget build(BuildContext context) {
-    return loading ? Loading() : Scaffold(
+    return loading ? Loading() : 
+    Container( 
+      decoration: BoxDecoration(
+        image: DecorationImage(image: new AssetImage("lib/images/LavaLampBG_Break.gif"))
+      ),
+      child: Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.brown,
+      backgroundColor: Colors.transparent,
       appBar: AppBar(
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.transparent,
         elevation: 0.0,
         title: Text(''),
         actions: <Widget>[
@@ -115,6 +120,7 @@ class _RegisterState extends State<Register> {
           ),
         ),
       ),
+    )
     );
   }
 }

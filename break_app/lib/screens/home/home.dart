@@ -7,12 +7,15 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Container( 
+      decoration: BoxDecoration(
+        image: DecorationImage(image: new AssetImage("lib/images/LavaLampBG_Break.gif"))
+      ),
       child: Scaffold(
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.transparent,
         appBar: AppBar(
           title: Text(''),
-          backgroundColor: Colors.brown,
+          backgroundColor: Colors.transparent,
           elevation: 0.0,
           actions: <Widget>[
             FlatButton.icon(
