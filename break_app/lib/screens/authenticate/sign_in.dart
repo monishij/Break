@@ -1,5 +1,6 @@
 import 'package:break_app/services/auth.dart';
 import 'package:break_app/shared/constants.dart';
+import 'package:break_app/shared/loading.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatefulWidget {
@@ -16,23 +17,24 @@ class _SignInState extends State<SignIn> {
   final AuthService _auth = AuthService();
   final _formKey = GlobalKey<FormState>();
   String error = '';
-
+  bool loading = false;
   // text field state
   String email = '';
   String password = '';
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.brown[100],
+    return loading ? Loading() : Scaffold(
+      resizeToAvoidBottomInset: false,
+      backgroundColor: Colors.brown,
       appBar: AppBar(
-        backgroundColor: Colors.brown[400],
+        backgroundColor: Colors.brown,
         elevation: 0.0,
-        title: Text('Sign in to Brew Crew'),
+        title: Text(''),
         actions: <Widget>[
           FlatButton.icon(
             icon: Icon(Icons.person),
-            label: Text('Register'),
+            label: Text('SIGN UP'),
             onPressed: () => widget.toggleView(),
           ),
         ],
@@ -62,7 +64,7 @@ class _SignInState extends State<SignIn> {
                     },
                   ),
                 ),
-                SizedBox(height: 10.0),
+                SizedBox(height: 20.0),
                 Padding(
                   padding: const EdgeInsets.only(left: 30.0, right: 30),
                   child: TextFormField(
@@ -84,7 +86,7 @@ class _SignInState extends State<SignIn> {
                       )
                     ),
                     child: Text(
-                      "SIGN UP",
+                      "SIGN IN",
                       style: TextStyle(color: Colors.white)),
                     onPressed: () async {
                       if (_formKey.currentState.validate()){
@@ -95,10 +97,12 @@ class _SignInState extends State<SignIn> {
                         // when pressed, validate() runs the two validator fxns
                         // in the textformfields above
                         // only when it gets null back, we are valid
+                        setState(() {loading = true;});
                         dynamic result = await _auth.signInWithEmailAndPassword(email, password);
                         if (result == null){
                           setState(() {
                             error = 'could not sign in with those credentials';
+                            loading = false;
                           });
 
                         }

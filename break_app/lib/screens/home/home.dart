@@ -9,10 +9,10 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
-        backgroundColor: Colors.brown[50],
+        backgroundColor: Colors.brown,
         appBar: AppBar(
-          title: Text('Brew Crew'),
-          backgroundColor: Colors.brown[400],
+          title: Text(''),
+          backgroundColor: Colors.brown,
           elevation: 0.0,
           actions: <Widget>[
             FlatButton.icon(
